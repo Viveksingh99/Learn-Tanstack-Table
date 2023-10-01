@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo, useReducer, useState } from 'react'
 
 import {
   Column,
@@ -65,14 +65,14 @@ const fuzzySort: SortingFn<any> = (rowA, rowB, columnId) => {
 }
 
 function TableTask() {
-  const rerender = React.useReducer(() => ({}), {})[1]
+  const rerender = useReducer(() => ({}), {})[1]
 
-  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>(
     []
   )
-  const [globalFilter, setGlobalFilter] = React.useState('')
+  const [globalFilter, setGlobalFilter] = useState('')
 
-  const columns = React.useMemo<ColumnDef<Person, any>[]>(
+  const columns = useMemo<ColumnDef<Person, any>[]>(
     () => [
       {
         header: 'Name',

@@ -1,12 +1,13 @@
-import './App.css'
-import TableTask from './components/TableTask'
+import DataTable from './components/DataTable'
+// import TableTask from './components/TableTask'
 
 function App() {
 
   return (
     <>
       <div>
-       <TableTask/>
+       {/* <TableTask/> */}
+       <DataTable/>
       </div>
     </>
   )

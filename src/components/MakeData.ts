@@ -1,4 +1,5 @@
 import { faker } from '@faker-js/faker'
+import jsonData from './jsonData'
 
 export type Person = {
   firstName: string
@@ -9,6 +10,7 @@ export type Person = {
   status: 'relationship' | 'complicated' | 'single'
   subRows?: Person[]
 }
+console.log("first",jsonData)
 
 const range = (len: number) => {
   const arr = []
@@ -46,3 +48,5 @@ export function makeData(...lens: number[]) {
 
   return makeDataLevel()
 }
+
+
